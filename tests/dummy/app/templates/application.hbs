@@ -1,3 +1,17 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="container">
 
-{{outlet}}
+  {{#bs-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
+    {{nav.brand brand='ui-bootstrap' linkTo='https://github.com/lifegadget/ui-bootstrap'}}
+    {{#nav.items}}
+      {{#nav.item routeTo='index'}}
+        README
+      {{/nav.item}}
+      {{nav.item title='CSS' routeTo='css'}}
+      {{nav.item title='Components' routeTo='components'}}
+      {{nav.item title='Addons' routeTo='addons'}}
+    {{/nav.items}}
+  {{/bs-navbar}}
+
+  {{outlet}}
+
+</div>

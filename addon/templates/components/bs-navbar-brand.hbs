@@ -1,0 +1,7 @@
+<div class="navbar-brand" onclick={{action 'onChange' this}}>
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{brand}}
+  {{/if}}
+</div>

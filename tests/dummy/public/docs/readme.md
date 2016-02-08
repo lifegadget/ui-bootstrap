@@ -1,6 +1,3 @@
-# ui-bootstrap
-
-> Adds a complete Ember Bootstrap 4.x eco-system
 
 ## Installation
 
@@ -25,18 +22,18 @@ If you're interested, another very complimentary plugin (by yours truely) is:
 
 By default all the CSS that Bootstrap is known for is made available to you when you add the following line to your `app.scss`:
 
-````SASS
+```SASS
 @import 'bootstrap';
-````
+```
 
 #### Flexbox
 
 Now that **flexbox** is all grown up and supported by all _proper_ browsers, Bootstrap 4 gives you the option to "opt-in" into a flexbox grid system. You should DO IT. Here's how:
 
-````SASS
+```SASS
 $enable-flex: true;
 @import 'bootstrap';
-````
+```
 
 Alternatively you can just use the shortcut `@import 'bootstrap-flex';` which is exactly the same.
 

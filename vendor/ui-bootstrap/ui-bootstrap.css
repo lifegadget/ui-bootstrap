@@ -1,0 +1,9 @@
+.nav-item .nav-link {
+  cursor: pointer;
+}
+.navbar-brand {
+  cursor: pointer;
+}
+.navbar {
+  margin: 1rem 0;
+}

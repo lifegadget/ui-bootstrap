@@ -1,0 +1,9 @@
+<li class="nav-item {{if (eq routeTo selected) 'active'}}">
+  <div class="nav-link" onclick={{action 'onChange' this}}>
+    {{#if hasBlock}}
+      {{yield}}
+    {{else}}
+      {{title}}
+    {{/if}}
+  </div>
+</li>

@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-xs-6">
+    <h1>Navbar</h1>
+    <p class="text-muted">
+      We have added a <span class="label label-pill label-default">bs-navbar</span> component which in turn has a number of contextual components under it:
+      <ul>
+        <li>bs-navbar-brand</li>
+        <li>bs-navbar-items</li>
+        <li>bs-navbar-item</li>
+      </ul>
+    </p>
+    <p>
+      The navbar for this demo is using this and you can refer to the dummy app for more details but to the right you see the <code>application.hbs</code> template's layout used.
+    </p>
+  </div>
+  <div class="col-xs-6">
+{{#code-block language='handlebars'}}
+\{{#bs-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
+  \{{nav.brand
+      brand='ui-bootstrap'
+      linkTo='https://github.com/lifegadget/ui-bootstrap'
+    }}
+  \{{#nav.items}}
+    \{{#nav.item routeTo='index'}}
+      README
+    \{{/nav.item}}
+    \{{nav.item title='CSS' routeTo='css'}}
+    \{{nav.item title='Components' routeTo='components'}}
+    \{{nav.item title='Addons' routeTo='addons'}}
+  \{{/nav.items}}
+\{{/bs-navbar}}{{/code-block}}
+
+  </div>
+</div>

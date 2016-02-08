@@ -1,0 +1,1 @@
+export { default } from 'ui-bootstrap/components/bs-navbar-item';

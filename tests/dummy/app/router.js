@@ -6,6 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('css');
+  this.route('components');
+  this.route('addons');
 });
 
 export default Router;
