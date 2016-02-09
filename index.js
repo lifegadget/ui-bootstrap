@@ -14,7 +14,6 @@ module.exports = {
     const bower = target.bowerDirectory;
     const o = app.options['ui-bootstrap'] || { js: false};
     const configMessage = [];
-
     target.import('vendor/ui-bootstrap/ui-bootstrap.css');
 
     // Import JS from bootstrap
@@ -36,7 +35,7 @@ module.exports = {
   },
 
   treeForStyles: function(){
-    const bootstrapPath = path.join('node_modules', 'bootstrap/scss');
+    const bootstrapPath = path.join('bower_components', 'bootstrap/scss');
     const trees = [];
     const existingStyle = this._super.treeForStyles.apply(this, arguments);
     const bootstrap = new Funnel(bootstrapPath, {

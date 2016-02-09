@@ -7,3 +7,7 @@
 .navbar {
   margin: 1rem 0;
 }
+
+.navbar .nav-item.right {
+  float: right;
+}

@@ -9,9 +9,9 @@ module.exports = {
   //   };
   // }
 
-  // afterInstall: function() {
-  //   return this.addBowerPackagesToProject([
-  //     { name: 'bootstarp', target: '^1.3.0' }
-  //   ]);
-	// }
+  afterInstall: function() {
+    return this.addBowerPackagesToProject([
+      { name: 'bootstrap', target: '#v4.0.0-alpha.2' }
+    ]);
+	}
 };

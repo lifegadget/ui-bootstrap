@@ -1,4 +1,4 @@
-<li class="nav-item {{if (eq routeTo selected) 'active'}}">
+<li class="nav-item {{if (eq routeTo selected) 'active'}} {{class}}">
   <div class="nav-link" onclick={{action 'onChange' this}}>
     {{#if hasBlock}}
       {{yield}}
