@@ -2,6 +2,8 @@
 
 > Adds a complete Ember Bootstrap 4.x eco-system
 
+> THIS IS CURRENTLY A WORK IN PROGRESS ... it will be ready pretty soon
+
 ## Installation
 
     ember install ui-bootstrap
