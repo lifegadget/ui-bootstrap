@@ -1,0 +1,9 @@
+{
+  "firebase": "ui-bootstrap-4",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

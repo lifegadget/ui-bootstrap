@@ -3,20 +3,20 @@
     <h1>Label</h1>
     <p class="text-muted">
       As has been the cases for several versions of Bootstrap there is a bootstrap
-      {{bs-label title='label'}} component. Stylistically you can now also state that the
-      label should be {{bs-label pill=true title='pill shaped'}}.
+      {{bs-label 'label'}} component. Stylistically you can now also state that the
+      label should be {{bs-pill 'pill shaped'}}.
     </p>
     <p class='text-muted'>
-      The {{bs-label title='mood' mood='success'}} property is also supported and you can use
-      both {{bs-label title='inline' mood='info'}} and {{#bs-label mood='primary'}}block{{/bs-label}} forms.
+      The {{bs-label 'my mood' mood='success'}} property is also supported and you can use
+      both {{bs-label 'inline' mood='info'}} and {{#bs-label mood='primary'}}block{{/bs-label}} forms.
     </p>
   </div>
   <div class="col-xs-6">
 {{#code-block language='handlebars'}}
-\{{bs-label title='label'}}
-\{{bs-label title='pill shaped' pill=true}}
-\{{bs-label title='mood' mood='success'}}
-\{{bs-label title='inline' mood='info'}}
+\{{bs-label 'label'}}
+\{{bs-pill 'pill shaped'}}
+\{{bs-label 'my mood' mood='success'}}
+\{{bs-label 'inline' mood='info'}}
 \{{#bs-label mood='primary'}}block\{{/bs-label}}{{/code-block}}
   </div>
 </div>

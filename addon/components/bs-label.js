@@ -1,9 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/bs-label';
 
-export default Ember.Component.extend({
+const bsLabel = Ember.Component.extend({
   layout: layout,
   tagName: '',
-  pill: false,
   mood: 'default'
 });
+bsLabel.reopenClass({
+  positionalParams: ['title']
+});
+export default bsLabel;
