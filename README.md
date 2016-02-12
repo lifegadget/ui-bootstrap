@@ -54,7 +54,7 @@ The general philosophy with this addon is to NOT include bootstraps JS as in mos
 |-----------|------------|
 |tooltip    | BS has moved to a dual dependency on [_tether_](http://github.hubspot.com/tether/) as well as its own JS library. Rather than go this route we have included the [`ember-tooltip`]() library instead. It is available by default but can be disabled if not wanted in the configuration.|
 |popovers   | this is currently not supported by the addon but of course you can include `ember-tether` and then manually bringing in the popovers JS from Bootstrap.|
-|collapse   | an internal BS dependency, this is made simpler by the addition of the `bs-accordian` component included as part of this addon |
+|collapse   | an internal BS dependency, this is made simpler by the addition of the `ui-accordian` component included as part of this addon |
 |modal      | no direct support for the Bootstrap modals. Instead we have included `ember-cli-modal` which feels like a much more Ember way of doing things. |
 |alert      | the alert CSS, of course, is available, but the "flash message" _like_ functionality feels redundant with the excellent `ember-cli-flash` addon. |
 
@@ -62,8 +62,8 @@ In addition, there are a few _components_ in Bootstrap that don't have any javas
 
 | component | comments   |
 |-----------|------------|
-|label      | we've added a `bs-label` component for you which handles both _pill_ and _traditional_ varieties |
-|pagination | we've added a `bs-pagination` component |
+|label      | we've added a `ui-label` component for you which handles both _pill_ and _traditional_ varieties |
+|pagination | we've added a `ui-pagination` component |
 
 
 ## Configuration

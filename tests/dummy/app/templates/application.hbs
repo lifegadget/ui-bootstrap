@@ -1,6 +1,6 @@
 <div class="container">
 
-  {{#bs-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
+  {{#ui-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
     {{nav.brand brand='ui-bootstrap' linkTo='https://github.com/lifegadget/ui-bootstrap'}}
     {{#nav.items}}
       {{#nav.item routeTo='index'}}
@@ -10,7 +10,7 @@
       {{nav.item title='Components' routeTo='components'}}
       {{nav.item title='Addons' routeTo='addons'}}
     {{/nav.items}}
-  {{/bs-navbar}}
+  {{/ui-navbar}}
 
   {{outlet}}
 

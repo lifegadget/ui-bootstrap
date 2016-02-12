@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/bs-navbar-item';
+import layout from '../templates/components/ui-navbar-brand';
 
 export default Ember.Component.extend({
   layout: layout,
@@ -7,8 +7,7 @@ export default Ember.Component.extend({
 
   actions: {
     onChange(args) {
-      this.attrs.onChange(args);
+      return this.attrs.onChange(args);
     }
   }
-
 });

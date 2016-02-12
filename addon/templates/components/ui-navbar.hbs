@@ -1,0 +1,8 @@
+<nav class="navbar navbar-light bg-faded">
+  {{yield (hash
+    brand=(component 'ui-navbar-brand' onChange=(action 'onChange') selected=nav.selected)
+    items=(component 'ui-navbar-items' )
+    item=(component 'ui-navbar-item' onChange=(action 'onChange') selected=selected)
+    right=(component 'ui-navbar-item' class='right' onChange=(action 'onChange') selected=selected)
+  )}}
+</nav>

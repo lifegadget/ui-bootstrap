@@ -78,11 +78,11 @@
   <div class="col-xs-12 col-md-6">
     <h1>Navbar</h1>
     <p class="text-muted">
-      We have added a {{ui-label title='bs-navbar' pill=true}} component which in turn has a number of contextual components under it:
+      We have added a {{ui-label title='ui-navbar' pill=true}} component which in turn has a number of contextual components under it:
       <ul>
-        <li>bs-navbar-brand</li>
-        <li>bs-navbar-items</li>
-        <li>bs-navbar-item</li>
+        <li>ui-navbar-brand</li>
+        <li>ui-navbar-items</li>
+        <li>ui-navbar-item</li>
       </ul>
     </p>
     <p>
@@ -91,7 +91,7 @@
   </div>
   <div class="col-xs-12 col-md-6">
 {{#code-block language='handlebars'}}
-\{{#bs-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
+\{{#ui-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
   \{{nav.brand
       brand='ui-bootstrap'
       linkTo='https://github.com/lifegadget/ui-bootstrap'
@@ -104,7 +104,7 @@
     \{{nav.item title='Components' routeTo='components'}}
     \{{nav.item title='Addons' routeTo='addons'}}
   \{{/nav.items}}
-\{{/bs-navbar}}{{/code-block}}
+\{{/ui-navbar}}{{/code-block}}
 
   </div>
 </div>
