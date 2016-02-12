@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-xs-6">
-    <h1>Label</h1>
+  <div class="col-xs-12 col-md-6">
+    <h1>Label and Pill</h1>
     <p class="text-muted">
       As has been the cases for several versions of Bootstrap there is a bootstrap
       {{bs-label 'label'}} component. Stylistically you can now also state that the
@@ -11,20 +11,71 @@
       both {{bs-label 'inline' mood='info'}} and {{#bs-label mood='primary'}}block{{/bs-label}} forms.
     </p>
   </div>
-  <div class="col-xs-6">
-{{#code-block language='handlebars'}}
-\{{bs-label 'label'}}
-\{{bs-pill 'pill shaped'}}
-\{{bs-label 'my mood' mood='success'}}
-\{{bs-label 'inline' mood='info'}}
-\{{#bs-label mood='primary'}}block\{{/bs-label}}{{/code-block}}
+  <div class="col-xs-12 col-md-6">
+    <table class='table'>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-label 'my label'}}{{/code-block}}</td>
+        <td width='50%'>{{ui-label 'my label'}}</td>
+      </tr>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-pill 'my pill'}}{{/code-block}}</td>
+        <td width='50%'>{{ui-pill 'my pill'}}</td>
+      </tr>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-pill 'moody pill' mood='danger'}}{{/code-block}}</td>
+        <td width='50%'>{{ui-pill 'moody pill' mood='danger'}}</td>
+      </tr>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-pill 'big pill' size='large'}}{{/code-block}}</td>
+        <td width='50%'>{{ui-pill 'big pill' size='large'}}</td>
+      </tr>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-pill 'secret pill' size='small'}}{{/code-block}}</td>
+        <td width='50%'>{{ui-pill 'secret pill' size='small'}}</td>
+      </tr>
+    </table>
+
   </div>
 </div>
 
 <hr>
 
 <div class="row">
-  <div class="col-xs-6">
+  <div class="col-xs-12 col-md-6">
+    <h1>Progress Bar</h1>
+    <p class="text-muted">
+      The progress bar in Bootstrap is an HTML 5 based progress bar with some additional styling. This addon adds an Ember component that makes it usage easier.
+    </p>
+    <p>
+      <blockquote class='blockquote'>
+        <b>Note:</b> animation is currently broken but this is broken in Bootstrap, not here
+      </blockquote>
+    </p>
+
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <table class='table'>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-progress 25}}{{/code-block}}</td>
+        <td width='50%'>{{ui-progress 25}}</td>
+      </tr>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-progress 25 striped=true}}{{/code-block}}</td>
+        <td width='50%'>{{ui-progress 25 striped=true}}</td>
+      </tr>
+      <tr>
+        <td>{{#code-block language='handlebars'}}\{{ui-progress 25 animated=true}}{{/code-block}}</td>
+        <td width='50%'>{{ui-progress 25 animated=true}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
     <h1>Navbar</h1>
     <p class="text-muted">
       We have added a {{bs-label title='bs-navbar' pill=true}} component which in turn has a number of contextual components under it:
@@ -38,7 +89,7 @@
       The navbar for this demo is using this and you can refer to the dummy app for more details but to the right you see the <code>application.hbs</code> template's layout used.
     </p>
   </div>
-  <div class="col-xs-6">
+  <div class="col-xs-12 col-md-6">
 {{#code-block language='handlebars'}}
 \{{#bs-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
   \{{nav.brand

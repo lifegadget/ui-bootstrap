@@ -11,3 +11,14 @@
 .navbar .nav-item.right {
   float: right;
 }
+
+.label.pill-size-large,
+.label.label-size-large {
+  font-size: 100%;
+}
+.label.pill-size-small,
+.label.label-size-small {
+  font-size: 55%;
+  font-weight: 400;
+  line-height: 0.9;
+}
