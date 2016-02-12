@@ -1,1 +1,0 @@
-export { default } from 'ui-bootstrap/components/bs-pill';
