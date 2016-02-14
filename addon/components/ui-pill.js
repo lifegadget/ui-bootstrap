@@ -14,4 +14,5 @@ const pill = Ember.Component.extend({
 pill.reopenClass({
   positionalParams: ['title']
 });
+pill[Ember.NAME_KEY] = 'ui-pill';
 export default pill;

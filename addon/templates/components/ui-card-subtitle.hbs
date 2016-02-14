@@ -1,1 +1,7 @@
-{{yield}}
+<h6 class="card-subtitle {{class}}">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{content}}
+  {{/if}}
+</h6>

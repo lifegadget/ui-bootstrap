@@ -1,49 +1,9 @@
 $enable-flex: true;
 
 // Core variables and mixins
-@import "variables";
-@import "mixins";
-
-// Reset and dependencies
-@import "normalize";
-@import "print";
-
-// Core CSS
-@import "reboot";
-@import "type";
-@import "images";
-@import "code";
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
-
-// Components
-@import "animation";
-@import "dropdown";
-@import "button-group";
-@import "input-group";
-@import "custom-forms";
-@import "nav";
-@import "navbar";
-@import "card";
-@import "breadcrumb";
-@import "pagination";
-@import "pager";
-@import "labels";
-@import "jumbotron";
-@import "alert";
-@import "progress";
-@import "media";
-@import "list-group";
-@import "responsive-embed";
-@import "close";
-
-// Utility classes
-@import "utilities";
-@import "utilities-background";
-@import "utilities-spacing";
-@import "utilities-responsive";
+@import "mixins/_grid";
+@import "mixins/_progress";
+@import "bootstrap-flex";
 
 pre[class*="language-"] {
   padding: 0.5em;
@@ -57,4 +17,12 @@ pre[class*="language-"] {
 
 .code-block {
   max-width: 532px;
+}
+
+.flash-messages {
+  position: fixed;
+  top: 50px;
+  left: 25%;
+  width: 50%;
+  z-index: 999;
 }

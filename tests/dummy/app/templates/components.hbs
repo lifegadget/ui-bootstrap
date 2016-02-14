@@ -60,12 +60,12 @@
         <td width='50%'>{{ui-progress 25}}</td>
       </tr>
       <tr>
-        <td>{{#code-block language='handlebars'}}\{{ui-progress 25 striped=true}}{{/code-block}}</td>
-        <td width='50%'>{{ui-progress 25 striped=true}}</td>
+        <td>{{#code-block language='handlebars'}}\{{ui-progress 35 striped=true}}{{/code-block}}</td>
+        <td width='50%'>{{ui-progress 35 striped=true}}</td>
       </tr>
       <tr>
-        <td>{{#code-block language='handlebars'}}\{{ui-progress 25 animated=true}}{{/code-block}}</td>
-        <td width='50%'>{{ui-progress 25 animated=true}}</td>
+        <td>{{#code-block language='handlebars'}}\{{ui-progress 45 animated=true}}{{/code-block}}</td>
+        <td width='50%'>{{ui-progress 45 animated=true}}</td>
       </tr>
     </table>
   </div>
@@ -83,6 +83,10 @@
         <ul>
           <li>{{ui-label 'header'}} => ui-card-header</li>
           <li>{{ui-label 'image'}}{{ui-label 'imageTop'}}{{ui-label 'imageBottom'}} => ui-card-image</li>
+          <ul>
+            <li>{{ui-label 'title'}} → ui-card-title (overlayed on image)</li>
+            <li>{{ui-label 'text'}} → ui-card-text (overlayed on image)</li>
+          </ul>
           <li>{{ui-label 'block'}} => ui-card-block</li>
           <ul>
             <li>text</li>
@@ -101,7 +105,7 @@
 {{#code-block language='handlebars'}}
 \{{#ui-card as |card|}}
   \{{#card.header}}Example Card\{{/card.header}}
-  \{{#card.image src='http://dummyimage.com/300x200/474747/c9c9c9.jpg'}}
+  \{{#card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg' width='100%' height='200px'}}
     Overlayed Text
   \{{/card.image}}
   \{{#card.block as |block|}}
@@ -115,21 +119,22 @@
 \{{/ui-card}} {{/code-block}}
 
     <div class="widget">
-      ... renders as <br>
-      {{#code-block language='handlebars'}}
+      <p>
+        ... renders as <br>
+      </p>
       {{#ui-card as |card|}}
         {{#card.header}}Example Card{{/card.header}}
-        {{#card.image src='http://dummyimage.com/300x200/474747/c9c9c9.jpg'}}
-          Overlayed Text
-        {{/card.image}}
+        {{card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
         {{#card.block as |block|}}
           {{block.title 'Epic Tale'}}
-          {{block.subTitle 'once upon a time'}}
+          {{block.subtitle 'once upon a time'}}
           {{#block.text}}
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor.
           {{/block.text}}
+          {{block.link 'External review' src='#' target='_new'}}
+          {{block.link 'Go home' route='index'}}
+          {{block.link 'Take action' action=(action 'cardAction')}}
         {{/card.block}}
-        {{/card.image}}
       {{/ui-card}}
     </div>
 

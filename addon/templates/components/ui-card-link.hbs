@@ -1,1 +1,20 @@
-{{yield}}
+{{#if src}}
+<a href="{{src}}" class="card-link {{class}}" alt="{{alt}}" >
+    {{yield}}
+    {{content}}
+</a>
+{{/if}}
+
+{{#if route}}
+  {{#link-to route class='card-link' alt="{{alt}}"}}
+    {{yield}}
+    {{content}}
+  {{/link-to}}
+{{/if}}
+
+{{#if action}}
+  <span class="card-link" onclick={{action 'onClick'}}>
+    {{yield}}
+    {{content}}
+  </span>
+{{/if}}

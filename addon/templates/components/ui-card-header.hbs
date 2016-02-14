@@ -1,1 +1,7 @@
-{{yield}}
+<div class="card-header">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{_content}}
+  {{/if}}
+</div>

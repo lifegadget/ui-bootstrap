@@ -22,3 +22,22 @@
   font-weight: 400;
   line-height: 0.9;
 }
+
+span.card-link {
+  color: #0275d8;
+  text-decoration: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+span.card-link:hover {
+  color: #014c8c;
+}
+
+/*.card-img-overlay.top {
+  top: 15px;
+  bottom: initial;
+}
+.card-img-overlay.bottom {
+  top: initial;
+  bottom: 15px;
+}*/

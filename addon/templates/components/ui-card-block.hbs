@@ -1,1 +1,16 @@
-{{yield}}
+<div class="card-block {{class}}">
+  {{#if hasBlock}}
+    {{yield (hash
+      title=(component 'ui-card-title')
+      subtitle=(component 'ui-card-subtitle')
+      text=(component 'ui-card-text')
+      link=(component 'ui-card-link')
+    )}}
+  {{else}}
+    {{#if title}}
+      {{ui-card-title title}}
+    {{/if}}
+    {{ui-card-text content}}
+  {{/if}}
+  {{content}}
+</div>

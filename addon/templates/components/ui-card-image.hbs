@@ -1,1 +1,14 @@
-{{yield}}
+<img
+  class="ui-card-image {{_class}}"
+  src={{src}}
+  style={{stylist}}
+  alt={{alt}}
+>
+{{#if (or hasBlock content)}}
+<div class="card-img-overlay {{overlayPosition}}">
+  {{yield (hash
+    title=(component 'ui-card-title')
+    text=(component 'ui-card-text')
+  )}}
+</div>
+{{/if}}
