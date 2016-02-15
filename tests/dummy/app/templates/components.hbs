@@ -89,9 +89,11 @@
           </ul>
           <li>{{ui-label 'block'}} => ui-card-block</li>
           <ul>
-            <li>text</li>
-            <li>link</li>
-            <li></li>
+            <li>{{ui-label 'title'}}</li>
+            <li>{{ui-label 'subtitle'}} → ui-card-subtitle</li>
+            <li>{{ui-label 'text'}} → ui-card-text</li>
+            <li>{{ui-label 'quote'}} → ui-card-blockquote</li>
+            <li>{{ui-label 'link'}}</li>
           </ul>
           <li>{{ui-label 'footer'}} => ui-card-footer</li>
         </ul>
@@ -100,29 +102,45 @@
     <p class='text-muted'>
       Since there are so many ways to combine these component you're most likely to use the <i>block-style</i>.
     </p>
+    <p>
+      At the top "card" level there are two values properties which have an impact on their subcomponents:
+    </p>
+    <p>
+      <ul>
+        <li>
+          {{ui-label 'mood'}} - by setting the mood -- primary, secondary, success, etc. -- we change the color of the card:
+          {{ui-toggle-button
+            value=mood
+            size='tiny'
+            onToggle=(mut inverse)
+          }}
+        </li>
+        <li>{{ui-label 'inverse'}} - a binary flag which alters the color of primarily text to make it lighter: {{ui-toggle-button value=inverse size='tiny' onToggle=(mut inverse)}}</li>
+      </ul>
+    </p>
   </div>
   <div class="col-xs-12 col-md-6">
 {{#code-block language='handlebars'}}
 \{{#ui-card as |card|}}
   \{{#card.header}}Example Card\{{/card.header}}
-  \{{#card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg' width='100%' height='200px'}}
-    Overlayed Text
-  \{{/card.image}}
+  \{{card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
   \{{#card.block as |block|}}
     \{{block.title 'Epic Tale'}}
-    \{{block.subTitle 'once upon a time'}}
+    \{{block.subtitle 'once upon a time'}}
     \{{#block.text}}
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor.
     \{{/block.text}}
+    \{{block.link 'External review' src='#' target='_new'}}
+    \{{block.link 'Go home' route='index'}}
+    \{{block.link 'Take action' action=(action 'cardAction')}}
   \{{/card.block}}
-  \{{/card.image}}
 \{{/ui-card}} {{/code-block}}
 
     <div class="widget">
       <p>
         ... renders as <br>
       </p>
-      {{#ui-card as |card|}}
+      {{#ui-card inverse=inverse as |card|}}
         {{#card.header}}Example Card{{/card.header}}
         {{card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
         {{#card.block as |block|}}
