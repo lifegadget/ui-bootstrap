@@ -108,15 +108,22 @@
     <p>
       <ul>
         <li>
-          {{ui-label 'mood'}} - by setting the mood -- primary, secondary, success, etc. -- we change the color of the card:
-          {{ui-toggle-button
-            value=mood
+          {{ui-label 'mood'}} - by setting the mood -- primary, secondary, success, etc. -- we change the color of the card:<br/>
+          {{ui-buttons
+            buttons='default,primary,secondary,info,warning,danger'
+            values=moods
             size='tiny'
-            onToggle=(mut inverse)
+            onChange=(mut moods)
           }}
         </li>
         <li>{{ui-label 'inverse'}} - a binary flag which alters the color of primarily text to make it lighter: {{ui-toggle-button value=inverse size='tiny' onToggle=(mut inverse)}}</li>
       </ul>
+    </p>
+    <p>
+      You will notice some "alpha" effects of Bootstrap 4 here and currently we're doing nothing to fix this as it assumed they'll be addressed by the team themselves. Even with some of these effects though, there are a lot of powerful things you can do. In order to go into more detail on cards and the composition of cards click the button below:
+    </p>
+    <p>
+      {{ui-button title='Cards in Detail' onClick=(action 'cardDetails')}}
     </p>
   </div>
   <div class="col-xs-12 col-md-6">
@@ -130,8 +137,8 @@
     \{{#block.text}}
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor.
     \{{/block.text}}
-    \{{block.link 'External review' src='#' target='_new'}}
-    \{{block.link 'Go home' route='index'}}
+    \{{block.link 'Hyperlink' src='#' target='_new'}}
+    \{{block.link 'LinkTo' route='index'}}
     \{{block.link 'Take action' action=(action 'cardAction')}}
   \{{/card.block}}
 \{{/ui-card}} {{/code-block}}
@@ -140,7 +147,7 @@
       <p>
         ... renders as <br>
       </p>
-      {{#ui-card inverse=inverse as |card|}}
+      {{#ui-card inverse=inverse mood=mood as |card|}}
         {{#card.header}}Example Card{{/card.header}}
         {{card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
         {{#card.block as |block|}}
@@ -149,8 +156,8 @@
           {{#block.text}}
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labor.
           {{/block.text}}
-          {{block.link 'External review' src='#' target='_new'}}
-          {{block.link 'Go home' route='index'}}
+          {{block.link 'Hyperlink' src='#' target='_new'}}
+          {{block.link 'LinkTo' route='index'}}
           {{block.link 'Take action' action=(action 'cardAction')}}
         {{/card.block}}
       {{/ui-card}}
@@ -194,5 +201,33 @@
   \{{/nav.items}}
 \{{/ui-navbar}}{{/code-block}}
 
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <h1>Buttons</h1>
+    <p class="text-muted">
+      Buttons are rich area within the framework and we have elected to <i>not</i> include them here but instead offer them as a seperate addon which you may add if it so suits you.
+    </p>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    {{#code-block language='bash'}}ember install ui-button{{/code-block}}
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <h1>Inputs</h1>
+    <p class="text-muted">
+      Input controls are also a rich area within the framework and in similar fashion we have seperated them into their own addon.
+    </p>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    {{#code-block language='bash'}}ember install ui-input{{/code-block}}
   </div>
 </div>

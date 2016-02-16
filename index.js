@@ -9,33 +9,22 @@ module.exports = {
   description: 'An Ember-flavoured Bootstrap 4.x eco-system',
 
   included(app, parentAddon) {
-    this._super.included(app);
     const target = (parentAddon || app);
-    const bower = target.bowerDirectory;
-    const o = app.options['ui-bootstrap'] || { js: false};
-    const configMessage = [];
-    target.import('vendor/ui-bootstrap/ui-bootstrap.css');
-
-    // Import JS from bootstrap
-    if(o.js instanceof Array) {
-      o.js.forEach(function(fileName) {
-        app.import(bower + 'javascripts/bootstrap/' + fileName + '.js');
-      });
-      configMessage.push('some JS loaded [' + o.js.join(',') + ']');
-    } else if (o.js !== false) {
-      app.import(bower + 'javascripts/bootstrap.js');
-      configMessage.push('all JS enabled');
+    this._super.included(target);
+    const o = app.options['ui-bootstrap'] || { useSASS: true };
+    if (o.useSASS) {
+      const sassOptions = target.options.sassOptions || { includePaths: []};
+      const bootstrapPath = path.join(target.bowerDirectory, 'bootstrap/scss');
+      sassOptions.includePaths.push(bootstrapPath);
     } else {
-      configMessage.push('no JS enabled');
+      target.import(path.join(target.bowerDirectory, 'bootstrap/dist/css/bootstrap.css'));
     }
-
-    if(o.quiet !== true) {
-      this.ui.writeLine('ui-bootstrap config: ' + configMessage.join(', '));
-    }
+    // ui-bootstrap specific
+    target.import('vendor/ui-bootstrap/ui-bootstrap.css');
   },
-
-  treeForStyles: function(){
-    const bootstrapPath = path.join('bower_components', 'bootstrap/scss');
+  
+  treeForStyles: function() {
+    const bootstrapPath = path.join(__dirname, 'bower_components', 'bootstrap/scss');
     const trees = [];
     const existingStyle = this._super.treeForStyles.apply(this, arguments);
     const bootstrap = new Funnel(bootstrapPath, {

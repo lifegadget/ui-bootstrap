@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('css');
-  this.route('components');
+  this.route('components', function() {
+    this.route('cards');
+  });
   this.route('addons');
 });
 
