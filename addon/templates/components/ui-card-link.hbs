@@ -1,7 +1,7 @@
-{{#if src}}
-<a href="{{src}}" class="card-link {{class}}" alt="{{alt}}" >
-    {{yield}}
-    {{content}}
+{{#if (not (or route action))}}
+<a href="{{src}}" class="card-link {{class}}" alt="{{alt}}" target="{{target}}">
+  {{yield}}
+  {{content}}
 </a>
 {{/if}}
 

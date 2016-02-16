@@ -10,15 +10,11 @@ test('it renders', function(assert) {
   // Handle any actions with this.on('myAction', function(val) { ... });"
 
   this.render(hbs`{{ui-progress}}`);
+  assert.equal(this.$().text().trim(), '%');
+  this.render(hbs`{{ui-progress '35'}}`);
+  assert.equal(this.$().text().trim(), '35%');
+  this.render(hbs`{{ui-progress 45}}`);
+  assert.equal(this.$().text().trim(), '45%');
 
-  assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:"
-  this.render(hbs`
-    {{#ui-progress}}
-      template block text
-    {{/ui-progress}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

@@ -11,9 +11,13 @@
   {{/each}}
 </div>
 <div class="container">
-
+  <h1 class="display-2">
+    {{ui-label title='ui-bootstrap' mood='success'}}&nbsp;addon
+  </h1>
   {{#ui-navbar onChange=(action 'navChange') selected=currentPath as |nav|}}
-    {{nav.brand brand='ui-bootstrap' linkTo='https://github.com/lifegadget/ui-bootstrap'}}
+    {{#nav.brand  linkTo='https://github.com/lifegadget/ui-bootstrap'}}
+    {{ui-icon icon='github' size='2x'}}
+    {{/nav.brand}}
     {{#nav.items}}
       {{#nav.item routeTo='index'}}
         README

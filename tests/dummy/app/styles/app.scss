@@ -1,9 +1,6 @@
-$enable-flex: true;
-
 // Core variables and mixins
-@import "mixins/_grid";
-@import "mixins/_progress";
-@import "bootstrap-flex";
+$enable-flex: true;
+@import "bootstrap";
 
 pre[class*="language-"] {
   padding: 0.5em;
