@@ -1,6 +1,6 @@
 /*jshint node:true*/
 module.exports = {
-  description: 'An Ember-flavoured Bootstrap 4.x eco-system'
+  description: 'An Ember-flavoured Bootstrap 4.x eco-system',
 
   // locals: function(options) {
   //   // Return custom template variables here.
