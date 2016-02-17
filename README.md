@@ -4,47 +4,58 @@
 
 > THIS IS CURRENTLY A WORK IN PROGRESS ... it will be ready pretty soon
 
+
 ## Installation
 
-    ember install ui-bootstrap
+```sh
+# optional; this is if you want to use SASS
+ember install ember-cli-sassy
+# required
+ember install ui-bootstrap
+```
 
 This will install not only the latest version of Bootstrap 4.x but also install:
 
-  - [`ember-cli-sass`](https://github.com/aexmachina/ember-cli-sass) - Bootstrap uses SASS as its default preprocessor in 4.x, no need to need to manually include this foundation addon yourself
   - [`ember-tooltips`](https://www.emberaddons.com/?query=tooltip) - Rather than use Bootstrap's tooltips we have opted for a more Ember based solution
   - [`ember-cli-flash`](https://github.com/poteto/ember-cli-flash) - Rather than the Bootstrap "alert" functionality we include this great addon
   - [`ember-cli-modal`](https://github.com/yapplabs/ember-modal-dialog) - Great ember modals using the `ember-modal` component. If you want to use `tether-modal` you can add `ember-tether` separately.
 
-If you're interested, another very complimentary plugin (by yours truely) is:
+While not included by default, two other very complimentary plugin (by yours truly) is:
 
-  - [`ui-button`](https://github.com/lifegadget/ui-button) - which makes Bootstrap styled buttons in Ember far more pleasant
+  - [`ui-button`](https://github.com/lifegadget/ui-button) - bootstrap enabled button controls
+  - [`ui-input`](https://github.com/lifegadget/ui-input) - bootstrap enabled input controls
 
-> **Note:** starting with Bootstrap 4, _glyphicons_ are no longer included in Bootstrap and are not part of this addon either. If you want some Ember help in using icon-libraries try [`ui-icon`](https://github.com/lifegadget/ui-icon)
+> **Note:** starting with Bootstrap 4, _glyphicons_ are no longer included in Bootstrap and are not part of this addon either. If you want some Ember help in using icon-libraries try [`ui-icon`](https://github.com/lifegadget/ui-icon) (this is included by default if you use `ui-button` or `ui-input`)
 
 ## Usage
 
-### CSS
+### SCSS / CSS
 
-By default all the CSS that Bootstrap is known for is made available to you when you add the following line to your `app.scss`:
+By default we're assuming you're using SCSS. But to get your Bootstrap mojo you'll need to include the following line to your `app.scss`:
 
-````SASS
+```SASS
 @import 'bootstrap';
-````
+// ... or ...
+@import 'bootstrap-flex';
+```
 
-#### Flexbox
+One of the really nice things about BS4 is that it can optionally use **flexbox** for all it's spacial positioning. You do lose a tiny bit of browser support but not much these days.
 
-Now that **flexbox** is all grown up and supported by all _proper_ browsers, Bootstrap 4 gives you the option to "opt-in" into a flexbox grid system. You should DO IT. Here's how:
+> **Note:** that by importing either of the two above you are importing _all_ of Bootstrap and that maybe more than you need. You can, when using SCSS, selectively import only what you need. As a targeted optimization for people using this plugin and sticking to it's no-JS metaphor you can use `ui-bootstrap` and `ui-bootstrap-flex` as more optimized targets.
 
-````SASS
-$enable-flex: true;
-@import 'bootstrap';
-````
+#### CSS Users
 
-Alternatively you can just use the shortcut `@import 'bootstrap-flex';` which is exactly the same.
+If you are stuck using CSS rather than SCSS, you will need to change the options for this plugin in your `environment.js` file:
 
-This switch is just one of many variables Bootstrap exposes to SASS driven apps (take a look at the `scss/_variables.scss` file for a run down).
+```js
+var ENV = {
+  uiBootstrap: {
+    useSASS: false
+  }
+}
+```
 
-> Note: You must define these variables _prior_ to the **@import** statement
+That's all that's needed but of course with this change you loose the ability to modify the SCSS variables which Bootstrap exposes.
 
 ### JS / Components
 
@@ -65,10 +76,6 @@ In addition, there are a few _components_ in Bootstrap that don't have any javas
 |label      | we've added a `ui-label` component for you which handles both _pill_ and _traditional_ varieties |
 |pagination | we've added a `ui-pagination` component |
 
-
-## Configuration
-
-tbd
 
 ## License
 
