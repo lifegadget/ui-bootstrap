@@ -13,18 +13,18 @@ module.exports = {
     this._super.included(target);
     const o = app.options['uiBootstrap'] || { useSASS: true };
     if (o.useSASS) {
-      const sassOptions = target.options.sassOptions || { includePaths: []};
-      const bootstrapPath = path.join(target.bowerDirectory, 'bootstrap/scss');
+      const sassOptions = app.options.sassOptions || { includePaths: []};
+      const bootstrapPath = path.join(app.bowerDirectory, 'bootstrap/scss');
       sassOptions.includePaths.push(bootstrapPath);
     } else {
-      target.import(path.join(target.bowerDirectory, 'bootstrap/dist/css/bootstrap.css'));
+      target.import(path.join(app.bowerDirectory, 'bootstrap/dist/css/bootstrap.css'));
     }
     // ui-bootstrap specific
     target.import('vendor/ui-bootstrap/ui-bootstrap.css');
   },
 
   treeForStyles: function() {
-    const bootstrapPath = path.join(__dirname, 'bower_components', 'bootstrap/scss');
+    const bootstrapPath = path.join('bower_components', 'bootstrap/scss');
     const trees = [];
     const existingStyle = this._super.treeForStyles.apply(this, arguments);
     const bootstrap = new Funnel(bootstrapPath, {
