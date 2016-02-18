@@ -1,6 +1,6 @@
 {
   "name": "ui-bootstrap",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "An Ember-flavoured Bootstrap 4.x eco-system",
   "directories": {
     "doc": "doc",
