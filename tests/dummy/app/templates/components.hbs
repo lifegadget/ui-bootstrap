@@ -233,3 +233,58 @@
 </div>
 
 <hr>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <h1>Jumbotron</h1>
+    <p class="text-muted">
+      The Jumbotron is assumed to be used in <i>block</i> format and yields the following items:
+    </p>
+    <p class="text-muted">
+      <ul>
+        <li><b>title</b> - use either block or inline format</li>
+        <li><b>lead</b> - use either block or inline format</li>
+        <li><b>divider</b> - only inline format; if you want to specify a width -- default is 100% -- then you can state this as positional parameter</li>
+      </ul>
+    </p>
+    <p class='text-muted'>
+      In addition, there are two component properties on the <b>ui-jumbotron</b> component which effect its look and feel:
+    </p>
+    <p class="text-muted">
+      <ul>
+        <li>
+          {{ui-toggle-button
+            on=' fluid '
+            off='default'
+            size='small'
+            value=fluid
+            onToggle=(mut fluid)
+          }}
+           - The rounded corners of a jumbotron are on by default but if you turn on "fluid" (aka, set to <i>true</i>) then it will take up the full horizontal space provided and remove the rounding
+         </li>
+        <li>The other parameter is </li>
+      </ul>
+    </p>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    {{#code-block language='handlebars'}}\{{#ui-jumbotron as |j|
+  \{{j.title 'Hello World'}}
+  \{{j.lead 'when you say hello to the world, it says hello back'}}
+  \{{j.divider}}
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  &lt;\p&gt;
+\{{/ui-jumbotron}}{{/code-block}}
+
+  {{#ui-jumbotron fluid=fluid as |j|}}
+    {{j.title 'Hello World'}}
+    {{j.lead 'when you say hello to the world, it says hello back'}}
+    {{j.divider}}
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  {{/ui-jumbotron}}
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,17 @@
+<div class="jumbotron {{if fluid 'jumbotron-fluid'}}">
+  {{#if fluid}}
+    <div class="{{if fluidContainer 'container-fluid' 'container'}}">
+      {{yield (hash
+        title=(component 'ui-jumbotron-title')
+        lead=(component 'ui-jumbotron-lead')
+        divider=(component 'ui-jumbotron-hr')
+      )}}
+    </div>
+  {{else}}
+    {{yield (hash
+      title=(component 'ui-jumbotron-title')
+      lead=(component 'ui-jumbotron-lead')
+      divider=(component 'ui-jumbotron-hr')
+    )}}
+  {{/if}}
+</div>
