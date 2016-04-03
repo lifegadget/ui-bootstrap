@@ -3,6 +3,7 @@
 const path = require('path');
 const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
+const merge = require('merge');
 
 module.exports = {
   name: 'ui-bootstrap',
@@ -11,7 +12,11 @@ module.exports = {
   included(app, parentAddon) {
     const target = (parentAddon || app);
     this._super.included(target);
-    const o = app.options['uiBootstrap'] || { useSASS: true };
+    const addonConfig = this.addonConfig = app.project.config(app.env)['uiBootstrap'] || {};
+    const addonBuildConfig = app.options['uiBootstrap'];
+    let o = merge(addonConfig, addonBuildConfig);
+    if (typeof o.useSASS === 'undefined') { o.useSASS = true; }
+
     if (o.useSASS) {
       const sassOptions = app.options.sassOptions || { includePaths: []};
       const bootstrapPath = path.join(app.bowerDirectory, 'bootstrap/scss');

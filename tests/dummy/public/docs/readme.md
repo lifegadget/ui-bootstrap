@@ -49,6 +49,8 @@ var ENV = {
 }
 ```
 
+> Note: you can also set this configuration in your `ember-cli-build.js` too if you prefer to do set this there.
+
 That's all that's needed but of course with this change you loose the ability to modify the SCSS variables which Bootstrap exposes.
 
 ### JS / Components
