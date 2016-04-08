@@ -33,6 +33,18 @@ span.card-link:hover {
   color: #014c8c;
 }
 
+.card-align-center {
+  text-align: center !important;
+}
+
+.card-align-right {
+  text-align: right !important;
+}
+
+.bs-clickable {
+  cursor: pointer;
+}
+
 /*.card-img-overlay.top {
   top: 15px;
   bottom: initial;

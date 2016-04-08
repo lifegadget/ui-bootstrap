@@ -3,10 +3,16 @@ import layout from '../templates/components/ui-card';
 
 const card = Ember.Component.extend({
   layout,
+  tagName: '',
   inverse: false,
+  align: undefined,
+  _align: Ember.computed('align', function() {
+    const align = this.get('align');
+    return align ? ` card-align-${align}` : '';
+  }),
   _mood: Ember.computed('mood', function() {
     const mood = this.get('mood');
-    return mood ? `card-${mood}` : null;
+    return mood ? ` card-${mood}` : null;
   }),
   _text: Ember.computed('text', function() {
     const text = this.get('text');

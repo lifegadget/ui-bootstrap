@@ -9,7 +9,7 @@ const a = Ember.A; // jshint ignore:line
 
 import layout from '../templates/components/ui-card-image';
 
-export default Ember.Component.extend(Stylist, {
+const cardImage = Ember.Component.extend(Stylist, {
   layout,
   tagName: '',
   width: '100%',
@@ -32,3 +32,9 @@ export default Ember.Component.extend(Stylist, {
   })
 
 });
+
+cardImage.reopenClass({
+  positionalParams: ['src']
+});
+cardImage[Ember.NAME_KEY] = 'ui-card-image';
+export default cardImage;

@@ -2,7 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/ui-card-header';
 const htmlSafe = Ember.String.htmlSafe;
 
-export default Ember.Component.extend({
+const cardHeader = Ember.Component.extend({
   layout,
   tagName:'',
   content:'',
@@ -10,3 +10,8 @@ export default Ember.Component.extend({
     return htmlSafe(this.get('content'));
   })
 });
+cardHeader.reopenClass({
+  positionalParams: ['content']
+});
+cardHeader[Ember.NAME_KEY] = 'ui-card-header';
+export default cardHeader;

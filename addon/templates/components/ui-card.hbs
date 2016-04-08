@@ -1,4 +1,4 @@
-<div class="card {{if inverse 'card-inverse'}} {{_mood}} {{_textPosition}}">
+<div class="card {{if inverse 'card-inverse'}}{{_mood}} {{_textPosition}}{{_align}}">
   {{yield (hash
     header=(component 'ui-card-header')
     image=(component 'ui-card-image' src=imageSrc)

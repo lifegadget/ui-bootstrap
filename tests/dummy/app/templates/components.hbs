@@ -10,6 +10,9 @@
       The {{ui-label 'my mood' mood='success'}} property is also supported and you can use
       both {{ui-label 'inline' mood='info'}} and {{#ui-label mood='primary'}}block{{/ui-label}} forms.
     </p>
+    <p>
+      Both <i>label</i> and <i>pill</i> support the <b>onClick</b> event. If the container using it attaches to this event the class {{ui-label '.bs-clickable'}} will be set which by default just turns the cursor into a pointer.
+    </p>
   </div>
   <div class="col-xs-12 col-md-6">
     <table class='table'>
@@ -130,7 +133,7 @@
 {{#code-block language='handlebars'}}
 \{{#ui-card as |card|}}
   \{{#card.header}}Example Card\{{/card.header}}
-  \{{card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
+  \{{card.image 'http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
   \{{#card.block as |block|}}
     \{{block.title 'Epic Tale'}}
     \{{block.subtitle 'once upon a time'}}
@@ -149,7 +152,7 @@
       </p>
       {{#ui-card inverse=inverse mood=mood as |card|}}
         {{#card.header}}Example Card{{/card.header}}
-        {{card.image src='http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
+        {{card.image 'http://dummyimage.com/600x400/474747/c9c9c9.jpg'}}
         {{#card.block as |block|}}
           {{block.title 'Epic Tale'}}
           {{block.subtitle 'once upon a time'}}

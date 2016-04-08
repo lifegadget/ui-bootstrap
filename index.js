@@ -14,8 +14,7 @@ module.exports = {
     this._super.included(target);
     const addonConfig = this.addonConfig = app.project.config(app.env)['uiBootstrap'] || {};
     const addonBuildConfig = app.options['uiBootstrap'];
-    let o = merge(addonConfig, addonBuildConfig);
-    if (typeof o.useSASS === 'undefined') { o.useSASS = true; }
+    let o = merge({ useSASS: true }, addonConfig, addonBuildConfig);
 
     if (o.useSASS) {
       const sassOptions = app.options.sassOptions || { includePaths: []};
@@ -28,9 +27,12 @@ module.exports = {
     target.import('vendor/ui-bootstrap/ui-bootstrap.css');
   },
 
-  treeForStyles: function() {
+  treeForStyles: function(tree) {
     const bootstrapPath = path.join('bower_components', 'bootstrap/scss');
     const trees = [];
+    if(tree) {
+      trees.push(tree);
+    }
     const existingStyle = this._super.treeForStyles.apply(this, arguments);
     const bootstrap = new Funnel(bootstrapPath, {
       srcDir: '/',
