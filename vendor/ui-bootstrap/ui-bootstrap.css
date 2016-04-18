@@ -45,6 +45,26 @@ span.card-link:hover {
   cursor: pointer;
 }
 
+.label.label-muted {
+  color: hsl(0, 0%, 30%);
+  background-color: rgb(215, 215, 215);
+}
+
+.list-group-item.list-group-item-muted {
+  color: hsl(0, 0%, 40%);
+  background-color: hsl(0, 0%, 90%);
+}
+
+.list-group-item.list-group-item-aged {
+  color: hsl(0, 0%, 60%);
+  background-color: hsl(0, 0%, 95%);
+}
+
+.list-group-item.list-group-item-ancient {
+  color: hsl(0, 0%, 75%);
+  background-color: hsl(0, 0%, 98%);
+}
+
 /*.card-img-overlay.top {
   top: 15px;
   bottom: initial;

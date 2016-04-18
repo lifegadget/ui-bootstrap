@@ -3,7 +3,7 @@
 
 ```sh
 # optional; this is if you want to use SASS
-ember install ember-cli-sassy
+ember install ember-cli-sass
 # required
 ember install ui-bootstrap
 ```

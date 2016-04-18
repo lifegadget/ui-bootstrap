@@ -1,0 +1,43 @@
+{{#if selectable}}
+  <a class="list-group-item{{_mood}}{{if disabled ' disabled'}} {{class}} bs-clickable{{if active ' active'}}" onclick={{action 'onClick'}}>
+    {{#if pill}}
+      {{#ui-list-item-right}}
+        {{ui-pill pill mood=pillMood}}
+      {{/ui-list-item-right}}
+    {{/if}}
+    {{#if label}}
+      {{#ui-list-item-right}}
+        {{ui-label label mood=labelMood}}
+      {{/ui-list-item-right}}
+    {{/if}}
+
+    {{yield (hash
+      heading=(component 'ui-list-item-heading' mood=mood)
+      text=(component 'ui-list-item-text' mood=mood)
+      right=(component 'ui-list-item-right' mood=mood)
+    )}}
+    {{ui-list-item-heading heading}}
+    {{ui-list-item-text text hasHeading=heading}}
+  </a>
+{{else}}
+  <li class="list-group-item{{_mood}}{{if disabled ' disabled'}} {{class}}{{if active ' active'}}">
+    {{#if pill}}
+      {{#ui-list-item-right}}
+        {{ui-pill pill mood=pillMood}}
+      {{/ui-list-item-right}}
+    {{/if}}
+    {{#if label}}
+      {{#ui-list-item-right}}
+        {{ui-label label mood=labelMood}}
+      {{/ui-list-item-right}}
+    {{/if}}
+
+    {{yield (hash
+      heading=(component 'ui-list-item-heading' mood=mood)
+      text=(component 'ui-list-item-text' mood=mood)
+      right=(component 'ui-list-item-right' mood=mood)
+    )}}
+    {{ui-list-item-heading heading}}
+    {{ui-list-item-text text hasHeading=heading}}
+  </li>
+{{/if}}

@@ -4,6 +4,9 @@ import layout from '../templates/components/ui-card-link';
 const link = Ember.Component.extend({
   layout,
   tagName:'',
+
+  title: undefined,
+  routeTo: undefined,
   url: Ember.computed.alias('src'),
   actions: {
     onClick(evt) {
@@ -14,7 +17,7 @@ const link = Ember.Component.extend({
   }
 });
 link.reopenClass({
-  positionalParams: ['content']
+  positionalParams: ['title']
 });
 link[Ember.NAME_KEY] = 'ui-card-link';
 export default link;

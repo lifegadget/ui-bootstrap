@@ -1,7 +1,15 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-card-block';
 
-export default Ember.Component.extend({
+const block = Ember.Component.extend({
   layout,
-  tagName:''
+  tagName:'',
+  title: undefined,
+  content: undefined
 });
+
+block.reopenClass({
+  positionalParams: ['content']
+});
+block[Ember.NAME_KEY] = 'ui-card-block';
+export default block;

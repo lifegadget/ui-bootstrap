@@ -13,6 +13,10 @@ const label = Ember.Component.extend({
   },
 
   mood: 'default',
+  _mood: Ember.computed('mood', function() {
+    const mood = this.get('mood');
+    return mood ? mood : 'default';
+  }),
   size: null,
   _size: Ember.computed('size', function() {
     const size = this.get('size');

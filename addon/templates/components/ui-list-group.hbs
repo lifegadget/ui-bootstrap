@@ -1,0 +1,23 @@
+{{#if selectable}}
+  <div class="list-group">
+    {{yield (hash
+        item=(
+          component 'ui-list-item'
+          selectable=selectable
+          register=(action 'register')
+          onClick=(action 'onClick')
+        )
+    )}}
+  </div>
+{{else}}
+  <ul class="list-group">
+    {{yield (hash
+        item=(
+          component 'ui-list-item'
+          selectable=selectable
+          register=(action 'register')
+          onClick=(action 'onClick')
+        )
+    )}}
+  </ul>
+{{/if}}

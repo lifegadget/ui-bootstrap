@@ -120,6 +120,9 @@
           }}
         </li>
         <li>{{ui-label 'inverse'}} - a binary flag which alters the color of primarily text to make it lighter: {{ui-toggle-button value=inverse size='tiny' onToggle=(mut inverse)}}</li>
+        <li>
+          {{ui-label 'justify'}} - you can state the horizontal justification you'd like for the card ("center", "left", "right")
+        </li>
       </ul>
     </p>
     <p>
@@ -287,6 +290,112 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
   {{/ui-jumbotron}}
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <h1>List Group</h1>
+    <p class="text-muted">
+      A "List Group" is a vertically stacked set of "items" which are contextually grouped in some way. The main property that can be set at the group level is whether the list items should be {{ui-pill 'selectable'}}. This is available as the boolean property and when set to <i>true</i> (the default) it will change the HTML from an unordered list (aka, &lt;UL>) of items to a set of links (aka, &lt;a>). Stylistically they will look the same but now a hover effect indicates that selectability is an option.
+    </p>
+    <p class="text-muted">
+      The {{ui-label 'ui-list-group'}} component <i>yields</i> a {{ui-label 'ui-list-item'}} component as the 'item' property and this is where most of the configuration will exist. The <b>item</b> component exposes the following properties:
+    </p>
+    <p class="text-muted">
+      <ul>
+        <li><b>active</b> - boolean flag to indicate whether considered "active"</li>
+        <li><b>disabled</b> - boolean flag to mark as disabled</li>
+        <li><b>mood</b> - you can specify a color mood for the item (aka, 'success', 'danger', etc.)</li>
+        <li><b>pill</b> - puts a pill component into the right hand side of the item</li>
+        <li><b>label</b> - puts a label component into the right hand side of the item</li>
+      </ul>
+    </p>
+    <p class='text-muted'>
+      The {{ui-label 'ui-list-item'}} component also <i>yields</i> the following contextual components:
+    </p>
+    <p class="text-muted">
+      <ul>
+        <li><b>item</b> - the main textual description</li>
+        <li><b>heading</b> - optionally include a bigger heading text to the item (used with 'item')</li>
+        <li><b>right</b> - to target the right side of the item use this component</li>
+      </ul>
+    </p>
+  </div>
+  <div class="col-xs-12 col-md-6">
+{{#code-block language='handlebars'}}\{{#ui-list-group selectable=false as |list|}}
+  \{{list.item 'Inbox' pill='6' pillMood='success'}}
+  \{{list.item 'Unread' label='none' labelMood='muted'}}
+  \{{#list.item 'Deleted' as |i|}}
+    \{{#i.right}}
+      \{{ui-icon 'trash'}}
+    \{{/i.right}}
+  \{{/list.item}}
+\{{/ui-list-group}}
+
+\{{#ui-list-group as |list|}}
+  \{{#list.item active=true as |i|}}
+    \{{i.heading 'One'}}
+    \{{i.text 'first ya do this'}}
+  \{{/list.item}}
+  \{{#list.item as |i|}}
+    \{{i.heading 'Two'}}
+    \{{i.text 'then you do this'}}
+  \{{/list.item}}
+  \{{list.item 'this is diabled' heading='Three' disabled=true}}
+  \{{list.item 'finally you end with this' heading='Four'}}
+\{{/ui-list-group}}
+
+\{{#ui-list-group as |list|}}
+  \{{list.item 'success' mood='success' pill='5'}}
+  \{{list.item 'info' mood='info'}}
+  \{{list.item 'muted' mood='muted'}}
+  \{{list.item 'aged' mood='aged'}}
+  \{{list.item 'ancient' mood='ancient'}}
+  \{{list.item 'normal'}}
+  \{{list.item 'warning' mood='warning'}}
+  \{{list.item 'danger' mood='danger' pill='8' pillMood='danger'}}
+\{{/ui-list-group}}{{/code-block}}
+
+{{#ui-list-group selectable=false as |list|}}
+  {{list.item 'Inbox' pill='6' pillMood='success'}}
+  {{list.item 'Unread' label='none' labelMood='muted'}}
+  {{#list.item 'Deleted' as |i|}}
+    {{#i.right}}
+      {{ui-icon 'trash'}}
+    {{/i.right}}
+  {{/list.item}}
+{{/ui-list-group}}
+<br>
+{{#ui-list-group as |list|}}
+  {{#list.item active=true as |i|}}
+    {{i.heading 'One'}}
+    {{i.text 'first ya do this'}}
+  {{/list.item}}
+  {{#list.item as |i|}}
+    {{i.heading 'Two'}}
+    {{i.text 'then you do this'}}
+  {{/list.item}}
+  {{list.item 'this is diabled' heading='Three' disabled=true}}
+  {{list.item 'finally you end with this' heading='Four'}}
+{{/ui-list-group}}
+
+<br>
+{{#ui-list-group as |list|}}
+  {{list.item 'success' mood='success' pill='5'}}
+  {{list.item 'info' mood='info'}}
+  {{list.item 'muted' mood='muted'}}
+  {{list.item 'aged' mood='aged'}}
+  {{list.item 'ancient' mood='ancient'}}
+  {{list.item 'normal'}}
+  {{list.item 'warning' mood='warning'}}
+  {{list.item 'danger' mood='danger' pill='8' pillMood='danger'}}
+
+{{/ui-list-group}}
+
   </div>
 </div>
 
