@@ -1,6 +1,6 @@
 {
   "name": "ui-bootstrap",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "An Ember-flavoured Bootstrap 4.x eco-system",
   "directories": {
     "doc": "doc",
@@ -73,7 +73,8 @@
     "ember-modal": "0.1.0",
     "ember-tooltips": "0.5.8",
     "ember-truth-helpers": "1.2.0",
-    "merge": "^1.2.0"
+    "merge": "^1.2.0",
+    "minimatch": "^3.0.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
