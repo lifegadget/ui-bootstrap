@@ -11,14 +11,14 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{ui-jumbotron}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('.jumbotron').length, 1, 'inline component works');
 
   // Template block usage:"
   this.render(hbs`
-    {{#ui-jumbotron}}
-      template block text
+    {{#ui-jumbotron as |j|}}
+      {{j.title 'hello world'}}
     {{/ui-jumbotron}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.jumbotron').length, 1, 'block component works');
 });

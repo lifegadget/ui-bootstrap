@@ -11,7 +11,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{ui-jumbotron-hr}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('.m-y-2').length, 1, 'inline component works');
 
   // Template block usage:"
   this.render(hbs`
@@ -20,5 +20,5 @@ test('it renders', function(assert) {
     {{/ui-jumbotron-hr}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.m-y-2').length, 1, 'block component works');
 });
