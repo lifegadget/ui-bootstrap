@@ -65,6 +65,15 @@ span.card-link:hover {
   background-color: hsl(0, 0%, 98%);
 }
 
+.card-header {
+  display: block;
+}
+.card-header h1,
+.card-header h2,
+.card-header h3, {
+  display: inline-flex;
+}
+
 /*.card-img-overlay.top {
   top: 15px;
   bottom: initial;
