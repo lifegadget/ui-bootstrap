@@ -15,20 +15,21 @@ module.exports = {
     const addonConfig = this.addonConfig = app.project.config(app.env)['uiBootstrap'] || {};
     const addonBuildConfig = app.options['uiBootstrap'];
     let o = merge({ useSASS: true }, addonConfig, addonBuildConfig);
+    const scssPath = path.join('node_modules', 'bootstrap/scss');
+    const cssPath = path.join('node_modules', 'bootstrap/dist/css');
 
     if (o.useSASS) {
       const sassOptions = app.options.sassOptions || { includePaths: []};
-      const bootstrapPath = path.join(app.bowerDirectory, 'bootstrap/scss');
-      sassOptions.includePaths.push(bootstrapPath);
+      sassOptions.includePaths.push(scssPath);
     } else {
-      target.import(path.join(app.bowerDirectory, 'bootstrap/dist/css/bootstrap.css'));
+      target.import(path.join(cssPath, 'bootstrap.css'));
     }
     // ui-bootstrap specific
-    target.import('vendor/ui-bootstrap/ui-bootstrap.css');
+    target.import('vendor/ui-bootstrap/ui-bootstrap-improvements.css');
   },
 
   treeForStyles: function(tree) {
-    const bootstrapPath = path.join('bower_components', 'bootstrap/scss');
+    const bootstrapPath = path.join('node_modules', 'bootstrap/scss');
     const trees = [];
     if(tree) {
       trees.push(tree);

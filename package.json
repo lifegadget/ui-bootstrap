@@ -1,6 +1,6 @@
 {
   "name": "ui-bootstrap",
-  "version": "0.0.27",
+  "version": "0.1.0",
   "description": "An Ember-flavoured Bootstrap 4.x eco-system",
   "directories": {
     "doc": "doc",
@@ -33,6 +33,7 @@
   "author": "Ken Snyder <ken@ken.net>",
   "license": "MIT",
   "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
     "broccoli-asset-rev": "^2.2.0",
     "ember-ajax": "0.7.1",
     "ember-cli": "2.3.0-beta.2",
