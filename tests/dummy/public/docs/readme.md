@@ -2,28 +2,32 @@
 ## Installation
 
 ```sh
-# optional; this is if you want to use SASS
-ember install ember-cli-sass
+# if you want to use SASS (recommended)
+ember install ember-cli-sassy
 # required
 ember install ui-bootstrap
+# - or -
+ember install ui-bootstrap-plus
 ```
 
-This will install not only the latest version of Bootstrap 4.x but also install:
+Installing `ui-bootstrap` will install Bootstrap 4.x locally to your project as an NPM dependency. If you install `ui-bootstrap-plus` then it will include all of these complimentary plugins as well:
 
-  - [`ember-tooltips`](https://www.emberaddons.com/?query=tooltip) - Rather than use Bootstrap's tooltips we have opted for a more Ember based solution
-  - [`ember-cli-flash`](https://github.com/poteto/ember-cli-flash) - Rather than the Bootstrap "alert" functionality we include this great addon
-  - [`ember-cli-modal`](https://github.com/yapplabs/ember-modal-dialog) - Great ember modals using the `ember-modal` component. If you want to use `tether-modal` you can add `ember-tether` separately.
+  - [`ui-icon`](https://github.com/lifegadget/ui-button) - font icons at your fingertips (uses fontawesome by default)
+  - [`ui-button`](https://github.com/lifegadget/ui-button) - bootstrap enabled button controls (includes tether and tooltips)
+  - [`ui-input`](https://github.com/lifegadget/ui-input) - bootstrap enabled input controls (includes tether and tooltips)
+  - [`ui-tooltip`](https://github.com/lifegadget/ui-tooltip) - _not done yet_
+  - [`ui-dropdown`](https://github.com/lifegadget/ui-dropdown) - _not done yet_
+  - [`ember-cli-flash`](https://github.com/poteto/ember-cli-flash) - great alert functionality that can be used with the Bootstrap alert styling
+  - [`ember-modal-dialog`](https://github.com/yapplabs/ember-modal-dialog) - Great support for modals in Ember.
+  - [`ember-tether`](https://github.com/yapplabs/ember-modal-dialog) - allows Ember to leverage all the positional panache of [Hubspot Tether](http://github.hubspot.com/tether/).
 
-While not included by default, two other very complimentary plugin (by yours truly) is:
+> **Note:** starting with Bootstrap 4, _glyphicons_ are no longer included in Bootstrap and are not part of this addon either. If you want some Ember help in using icon-libraries try [`ui-icon`](https://github.com/lifegadget/ui-icon)
 
-  - [`ui-button`](https://github.com/lifegadget/ui-button) - bootstrap enabled button controls
-  - [`ui-input`](https://github.com/lifegadget/ui-input) - bootstrap enabled input controls
-
-> **Note:** starting with Bootstrap 4, _glyphicons_ are no longer included in Bootstrap and are not part of this addon either. If you want some Ember help in using icon-libraries try [`ui-icon`](https://github.com/lifegadget/ui-icon) (this is included by default if you use `ui-button` or `ui-input`)
+If you want ALL of the above packages in one go just install `ui-bootstrap-plus` instead of `ui-bootstrap`.
 
 ## Usage
 
-### SCSS / CSS
+### SASS / CSS
 
 By default we're assuming you're using SCSS. But to get your Bootstrap mojo you'll need to include the following line to your `app.scss`:
 
@@ -49,29 +53,13 @@ var ENV = {
 }
 ```
 
-> Note: you can also set this configuration in your `ember-cli-build.js` too if you prefer to do set this there.
-
 That's all that's needed but of course with this change you loose the ability to modify the SCSS variables which Bootstrap exposes.
 
 ### JS / Components
 
-The general philosophy with this addon is to NOT include bootstraps JS as in most cases there are better ways to achieve these goals with Ember addons. See our approach to each of these components below, and in the next section we'll discuss how to enable or disable various aspects.
+The philosophy with this addon is to NOT include bootstraps JS as in most cases there are better ways to achieve these goals with Ember addons. See our approach to each of these components below, and in the next section we'll discuss how to enable or disable various aspects.
 
-| component | comments|
-|-----------|------------|
-|tooltip    | BS has moved to a dual dependency on [_tether_](http://github.hubspot.com/tether/) as well as its own JS library. Rather than go this route we have included the [`ember-tooltip`]() library instead. It is available by default but can be disabled if not wanted in the configuration.|
-|popovers   | this is currently not supported by the addon but of course you can include `ember-tether` and then manually bringing in the popovers JS from Bootstrap.|
-|collapse   | an internal BS dependency, this is made simpler by the addition of the `ui-accordian` component included as part of this addon |
-|modal      | no direct support for the Bootstrap modals. Instead we have included `ember-cli-modal` which feels like a much more Ember way of doing things. |
-|alert      | the alert CSS, of course, is available, but the "flash message" _like_ functionality feels redundant with the excellent `ember-cli-flash` addon. |
-
-In addition, there are a few _components_ in Bootstrap that don't have any javascript dependencies butwhere we felt a component would help in their use:
-
-| component | comments   |
-|-----------|------------|
-|label      | we've added a `ui-label` component for you which handles both _pill_ and _traditional_ varieties |
-|pagination | we've added a `ui-pagination` component |
-
+In addition, where Bootstrap _components_ don't have any javascript dependencies we have added Ember composable components. See the "component" tab on the demo site to find out more.
 
 ## License
 

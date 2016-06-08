@@ -1,9 +1,9 @@
 /* jshint node: true */
 'use strict';
 const path = require('path');
+const chalk = require('chalk');
 const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
-const merge = require('merge');
 
 module.exports = {
   name: 'ui-bootstrap',
@@ -12,19 +12,19 @@ module.exports = {
   included(app, parentAddon) {
     const target = (parentAddon || app);
     this._super.included(target);
-    const addonConfig = this.addonConfig = app.project.config(app.env)['uiBootstrap'] || {};
-    const addonBuildConfig = app.options['uiBootstrap'];
-    let o = merge({ useSASS: true }, addonConfig, addonBuildConfig);
     const scssPath = path.join('node_modules', 'bootstrap/scss');
     const cssPath = path.join('node_modules', 'bootstrap/dist/css');
 
-    if (o.useSASS) {
+    if (app.registry.availablePlugins['ember-cli-sass']) {
       const sassOptions = app.options.sassOptions || { includePaths: []};
       sassOptions.includePaths.push(scssPath);
     } else {
-      target.import(path.join(cssPath, 'bootstrap.css'));
+      this.ui.writeLine(chalk.bold('ui-bootstrap: ') + ' did not detect ' + chalk.bold.green('ember-cli-sass') + ' so using css configuration, installing this addon will switch ui-bootstrap to use SASS.');
+      // target.import(path.join(cssPath, 'bootstrap.css'));
+      target.import('vendor/ui-bootstrap/bootstrap.css');
     }
-    // ui-bootstrap specific
+
+    // ui-bootstrap additions/fixes
     target.import('vendor/ui-bootstrap/ui-bootstrap-improvements.css');
   },
 
