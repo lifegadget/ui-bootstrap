@@ -1,6 +1,6 @@
 {
   "name": "ui-bootstrap",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An Ember-flavoured Bootstrap 4.x eco-system",
   "directories": {
     "doc": "doc",
@@ -59,7 +59,7 @@
     "ember-try": "~0.1.2",
     "loader.js": "^4.0.0",
     "ui-button": "2.0.0-beta.4",
-    "ui-icon": "^0.10.4",
+    "ui-icon": "^0.10.5",
     "ui-markdown": "^0.1.7"
   },
   "keywords": [

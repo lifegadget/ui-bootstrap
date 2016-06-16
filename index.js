@@ -19,7 +19,7 @@ module.exports = {
       const sassOptions = app.options.sassOptions || { includePaths: []};
       sassOptions.includePaths.push(scssPath);
     } else {
-      this.ui.writeLine(chalk.bold('ui-bootstrap: ') + ' did not detect ' + chalk.bold.green('ember-cli-sass') + ' so using css configuration, installing this addon will switch ui-bootstrap to use SASS.');
+      this.ui.writeLine(chalk.bold('ui-bootstrap: ') + ' did not detect ' + chalk.bold.green('ember-cli-sass') + ' so using CSS configuration, installing this addon will switch ui-bootstrap to use SASS.');
       // target.import(path.join(cssPath, 'bootstrap.css'));
       target.import('vendor/ui-bootstrap/bootstrap.css');
     }
