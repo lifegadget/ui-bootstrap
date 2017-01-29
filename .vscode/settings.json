@@ -1,0 +1,22 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "projectManager.git.ignoredFolders": [
+    "node_modules",
+    "tmp",
+    "typings",
+    "dist"
+  ],
+  "projectManager.vscode.ignoredFolders": [
+    "node_modules",
+    "tmp",
+    "typings",
+    "dist"
+  ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "tmp/**": true,
+  }
+}
