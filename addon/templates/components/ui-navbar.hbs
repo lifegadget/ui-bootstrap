@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   {{yield (hash
     brand=(component 'ui-navbar-brand' onChange=(action 'onChange') selected=nav.selected)
     items=(component 'ui-navbar-items' )
