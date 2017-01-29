@@ -14,7 +14,7 @@ module.exports = {
 
   afterInstall: function() {
     return this.addPackagesToProject([
-      {name: 'bootstrap', target: '4.0.0-alpha.5'}
+      {name: 'bootstrap', target: '4.0.0-alpha.6'}
     ]);
 
 	}
