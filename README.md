@@ -18,14 +18,14 @@ ember install ui-bootstrap-plus
 
 Installing `ui-bootstrap` will install Bootstrap 4.x locally to your project as an NPM dependency. If you install `ui-bootstrap-plus` then it will include all of these complimentary plugins as well:
 
-  - [`ui-icon`](https://github.com/lifegadget/ui-button) - font icons at your fingertips (uses fontawesome by default)
+  - [`ui-icon`](https://github.com/lifegadget/ui-icon) - font icons at your fingertips (uses fontawesome by default)
   - [`ui-button`](https://github.com/lifegadget/ui-button) - bootstrap enabled button controls (includes tether and tooltips)
   - [`ui-input`](https://github.com/lifegadget/ui-input) - bootstrap enabled input controls (includes tether and tooltips)
   - [`ui-tooltip`](https://github.com/lifegadget/ui-tooltip) - _not done yet_
   - [`ui-dropdown`](https://github.com/lifegadget/ui-dropdown) - _not done yet_
   - [`ember-cli-flash`](https://github.com/poteto/ember-cli-flash) - great alert functionality that can be used with the Bootstrap alert styling
   - [`ember-modal-dialog`](https://github.com/yapplabs/ember-modal-dialog) - Great support for modals in Ember.
-  - [`ember-tether`](https://github.com/yapplabs/ember-modal-dialog) - allows Ember to leverage all the positional panache of [Hubspot Tether](http://github.hubspot.com/tether/).
+  - [`ember-tether`](https://github.com/yapplabs/ember-tether) - allows Ember to leverage all the positional panache of [Hubspot Tether](http://github.hubspot.com/tether/).
 
 > **Note:** starting with Bootstrap 4, _glyphicons_ are no longer included in Bootstrap and are not part of this addon either. If you want some Ember help in using icon-libraries try [`ui-icon`](https://github.com/lifegadget/ui-icon)
 
